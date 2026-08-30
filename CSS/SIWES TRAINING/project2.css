@@ -1,0 +1,30 @@
+body{
+    background-color: aqua;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    background-color: blue;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+ img{
+        height: 100px;      
+    }
+
+nav{
+    height: 50px;
+    background-color: white;
+}
+main{
+    height: 500px;
+    background-color: blue;
+}
+footer{
+    height: 100px;
+    background-color: white;
+}
