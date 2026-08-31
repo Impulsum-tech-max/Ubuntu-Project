@@ -1,11 +1,14 @@
 
         body{
-            width: 512px;
+            width: 1024px;
+            margin-top: 100px;
+            margin-bottom: 100px;
             margin-left: auto;
             margin-right: auto;
-            background-image: url(/IMAGES/reddishblack.jpg);
+            background-image: url(/MY-CODES/IMAGES/pexels-bookcollection.jpg);
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
             overflow: scroll;
         }
 
@@ -23,9 +26,9 @@
 
         header{
             /*width: 1024px;*/
-            background-color: red;
+            /* background-color: red; */
             text-align: center;
-            color: yellow;
+            color: rgb(207, 207, 11);
             padding-top: 20px;
             padding-bottom: 20px;
         }
@@ -36,23 +39,31 @@
             padding-top: 5px;
             padding-bottom:5px;
             background-attachment: fixed;
-            background-image: url(/IMAGES/logo.png);   
+            background-image: url(/MY-CODES/IMAGES/logo.png);   
         }
 
         main{
            /*width: 1024px;*/
             /* height: 400px; */
-            background-color:red;
+            background-color:rgba(120, 20, 20, 0.955);
             color: white;
             padding-bottom: 100px;
             padding-top: 100px;
             text-align: center;
         }
+
+        p{
+            text-shadow: 0 0 10px blue,
+                         0 0 20px blue,
+                         0 0 30px blue,
+                         0 0 40px blue;
+        }
+
         footer{
            /*width: 1024px;*/
             height: 100px;
             background-position-y: top;
-            background-image: url(/IMAGES/logo.png);  
+            background-image: url(/MY-CODES/IMAGES/logo.png);  
         }
 
     
