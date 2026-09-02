@@ -57,6 +57,10 @@ a:hover{
     color: rgb(20, 5, 5);
 }
 
+header, nav, main, footer{
+    width: 1000px;
+    margin: 0, auto;
+}
 
 header{
     height: 200px;
