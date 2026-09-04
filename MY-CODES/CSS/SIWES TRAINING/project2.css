@@ -1,0 +1,41 @@
+body{
+    margin: 0   
+}
+
+#box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+#box2{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 10px;
+    margin: 50px 0;
+}
+
+
+h1{
+    margin: 0;
+}
+a{
+    background-color: grey;
+}
+
+.circle{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;   
+    background-color: blue;
+}
+
+.text{
+    background-color: yellow;
+    text-align: center;
+    border: 10px solid goldenrod;
+    border-radius: 5px;
+    
+
+}
