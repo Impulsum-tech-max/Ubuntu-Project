@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+}
+
+header{
+    height: 20vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    background-color: black;
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    height: 50%;
+}
+
+.material-symbols-outlined{
+    color: white;
+}
+
+.location-icon{
+    display: flex;
+    border: solid 2px white;
+    height: 50px;
+    width: 130px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 5px;
+}
+
+.location-icon p{
+    color: white;
+}
+
+nav{
+    background-color: black;
+    height: 100px;
+    width: 40%;
+}
+
+.cart{
+ background-color: black;
+ height: 100px;
+ width: 10%;   
+}
