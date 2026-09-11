@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="login page for users">
     <title>Login</title>
     <link rel="stylesheet" href="css/mystyle.css">
+
     <style>
         body {
             min-height: 100vh;
@@ -13,12 +14,12 @@
             background-size: cover;
             background-position: center;
             position: relative;
-            text-align: center;
         }
 
         .logo{
             background-color: white;
             width: 40px;
+            height: 40px;
             text-align: center;
             margin: 0 auto;
 
@@ -27,13 +28,13 @@
             align-items: center;
         }
         .logo img{
-            /* top: 0; */
             margin: 0 auto ;
-            height: 50%;
-            width: 50%;
+            height: 80%;
+            width: 80%;
         }
 
         .container{
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,44 +49,54 @@
             border-radius: 32px;
             text-align: center;
             width: 90%;
+            max-width: 500px;
             padding: 50px 62px;
+            box-sizing: border-box;
         }
 
         .forgot {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            color: lightblue;
             margin-top: 10px;
-            margin-bottom: 0px;
         }
 
+        .forgot:hover{
+            color: beige;
+        }
 
         input {
             font-size: 15px;
             background-color: beige;
             border-radius: 10px;
-            padding: 0px 15px;
-            height: 25%;
-            margin-top: 22px;
+            width: 200px;
+            padding: 5px 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
         }
 
         h1 {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 50px;
+            font-size: 35px;
             margin-bottom: 5px;
         }
 
-        .get-started {
+        .button {
+            display: inline-block;
             width: 120px;
-            /* height: 50px; */
+            padding: 5px;
             border-radius: 50px;
             color: black;
             background-color: beige;
-            font-size: 2opx;
+            font-size:18px;
             font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Helvetica, sans-serif;
             text-decoration: none;
+            margin-top: 25px;
+            box-sizing: border-box;
         }
 
-        .get-started:hover{
+        .button:hover{
             font-weight: bolder;
             text-shadow: 0 0 10px beige,
                          0 0 20px beige,
@@ -97,49 +108,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 20px;
-        }
-
-        .social {
-            width: 100px;
-            /* height: 50px; */
-            border: 2px solid black;
-            border-radius: 10px;
-            background-color: beige;
-            font-size: large;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-
-        .social:hover{
-            font-weight: bolder;
-            text-shadow: 0 0 10px burlywood,
-                         0 0 20px burlywood,
-                         0 0 30px burlywood,
-                         0 0 40px burlywood;
-            
+            margin: 0 auto;
         }
 
         .link{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            text-decoration: none;
-            color: black;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin-left: 15px;
+            background-color: whitesmoke;
+            border-radius: 15px;
         }
 
         .social-logo{
-            width: 50%;
-            height: 50%;
+            width: 30px;
+            height: 30px;
         }
 
         .social-logo:hover{
-            font-size: larger;
-            text-shadow: 0 0 10px black,
-                         0 0 20px black,
-                         0 0 30px black,
-                         0 0 40px black;
-            
+            transform: scale(1.25);
+            transition: 0.25s;
         }
 
     </style>
@@ -154,55 +144,52 @@
                 <img src="/MY-CODES/IMAGES/login.png" alt="Login">
             </div>
             
-            <h1>Welcome back 😀</h1>
+            <h1>Welcome Back 😀</h1>
 
             <p>Sign in to your account</p>
             <p>Make a new doc to bring your works, data, and teams together.</p>
             <p> It's free!</p>
 
                      <!-- login details -->
-            <label for="Email">Email</label>
-            <input type="email" name="Email" placeholder="Email Address" required><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email Address" required><br>
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="password" name="password" id="password" placeholder="Password" required><br>
 
                         <!-- forgot password section -->
-            <div class="forgot">
-                <a href="forgot password.html">Forgot password?</a><br>
+            <br><div>
+                <a href="forgot password.html" target="_blank" rel="noopener noreferrer" class="forgot">Forgot password?</a>
             </div>
 
-            <!-- For submission -->
-             <br>
-            <a href="New page.html" class="get-started">Get Started</a>
+            <!-- To next page -->
+            <a href="New page.html" class="button">Get Started</a>
 
             <div class="sign-in">
                 
-                <p class="sign-in">Or sign in with</p>
+                <p>Or sign in with</p>
                 
             </div>
 
             <div>
-                <button type="button" class="social">
-                    <strong class="google">
-                        <a href="https://accounts.google.com" target="_blank" class="link">
+                
+                        <a href="#" class="link">
                             <img src="/MY-CODES/IMAGES/google.png" alt="Google" class="social-logo">
                         </a>
-                    </strong>
-                </button>
-                <button type="button" class="social">
-                    <strong class="facebook">
-                        <a href="https://www.facebook.com/login" class="link" target="_blank">
+        
+                
+                
+                        <a href="#" class="link">
                             <img src="/MY-CODES/IMAGES/facebook.png"  class="social-logo" alt="Facebook">
                         </a>
-                    </strong>
-                </button>
-                <button type="button" class="social">
-                    <strong class="apple">
-                        <a href="https://appleid.apple.com"  class="link" target="_blank">
+                    
+
+                
+                    
+                        <a href="#"  class="link">
                             <img src="/MY-CODES/IMAGES/apple-brands-solid-full.svg" alt="iOS" class="social-logo">
                         </a>
-                    </strong>
-                </button>
+                    
+                
             </div>
 
             <div>
