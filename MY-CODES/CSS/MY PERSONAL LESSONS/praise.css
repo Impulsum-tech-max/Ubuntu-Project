@@ -1,0 +1,28 @@
+body{
+            background-color: blueviolet;
+        }
+
+    h1{
+        text-align: center;
+        text-decoration: line-through;
+    }
+
+     div{
+        width: 500px;
+        height: 200px;
+        background-color: white;
+        margin: 0 auto;
+     }
+
+     #par{
+        text-align: center;
+        color: yellow;
+     }
+
+    .box p{
+        text-align: center;
+     }
+
+     .divpar{
+        color: green;
+     }

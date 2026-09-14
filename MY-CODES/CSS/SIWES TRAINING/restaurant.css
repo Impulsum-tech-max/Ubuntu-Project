@@ -23,6 +23,8 @@ header{
     height: 100px;
     width: 20%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 30px;
 }
 
@@ -35,12 +37,12 @@ header{
 }
 
 .location-icon{
-    display: flex;
+    /* display: flex; */
     height: 50px;
-    width: 130px;
-    align-items: center;
-    justify-content: space-between;
-    margin-right: 80px;
+    width: 100%;
+    /* align-items: center;
+    justify-content: space-between; */
+    /* margin-right: 80px; */
 }
 
 .location-icon p{
@@ -48,10 +50,10 @@ header{
 }
 
 nav{
-    height: 100px;
-    display: flex;
+    height: 100%;
+    width: 30%;
     gap: 60px;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 
 .nav{
@@ -60,8 +62,17 @@ nav{
 
 }
 
-cart{
+nav ul{
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart{
     margin-left:auto;
+    text-align: right;
 }
 
 .cart img{
@@ -158,5 +169,13 @@ cart{
 
     .image img{
         width: min(400px, 100%);
+    }
+}
+
+@media(max-width: 800px){
+    .test{
+        background-color: orange;
+        width: 400px;
+        height: 50px;
     }
 }
