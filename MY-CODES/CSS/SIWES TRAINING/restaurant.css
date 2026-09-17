@@ -6,17 +6,25 @@
 
 .container{
     width: 100%;
+    min-height: 100vh;
     background-color: rgb(78, 5, 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
+    position: fixed;
     height: 15vh;
+    width: 95%;
     min-height: 120px;
     padding: 20px 5%;
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
 }
 
 .logo{
@@ -33,7 +41,7 @@ header{
 }
 
 .material-symbols-outlined{
-    color: black;
+    color: rgb(78, 5, 5);
 }
 
 .location-icon{
@@ -71,24 +79,35 @@ nav ul{
 }
 
 .cart{
-    margin-left:auto;
+    margin-right: 0;
     text-align: right;
 }
 
 .cart img{
-    width: min(40px, 50%);
+    width: min(25px, 50%);
     margin-bottom: 12%;
-    margin-left: 300px;
+    justify-content: space-around;
+}
+
+.hamburger-menu{
+    width: min(50px, 50%);
+    color: rgb(78, 5, 5);
+    margin-bottom: 5%;
+    display: none !important;
 }
 
 .main{
-    position: relative;
-    min-height: 100vh;
-    background-color: rgb(78, 5, 5);;
+    width: 100%;   
+    background-color: rgb(78, 5, 5);
+    overflow: hidden;
+}
+
+.text{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .main h1{
-    padding-top: 100px;
     color: white;
     font-size: clamp(45px, 7vw, 100px);
     font-weight: bolder;
@@ -105,11 +124,42 @@ nav ul{
     align-items: centre;
 }
 
-.image{
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.crunchies{
+    color: gold;
 }
+
+#question{
+    margin-top: 40px;
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+button{
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: white;
+    color: rgb(78, 5, 5);
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+#pickup{
+    margin-top: 5px;
+}
+
+.image{
+    margin-right: -80px;
+    /* margin-bottom: -50px; */
+}
+
 .image img{
     display: block;
     height: auto;
@@ -117,65 +167,72 @@ nav ul{
 }
 
 .main > main{
-    min-height: 100vh;
-    /* display: flex;
-    justify-content: space-around;
-    gap: 50px;
-    padding: 50px 5% 0; */
+    min-height: 85vh;
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (max-width: 768px){
+
+#menu{
+    background-color: white;
+    color: rgb(78, 5, 5);
+    text-align: center;
+    font-size: larger;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    
+}
 
 
-    header{
-        flex-wrap: wrap;
-        height: auto;
-        min-height: 10x;
-        padding: 15px 5%;
-    }
+#title{
+    display: block;
+    width: 100%;
+    font-size: 100px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 5px;
+}
 
-    .logo{
-        width: auto;
-        gap: 10px;
-    }
+.menu-section img{
+    width: 500px;
+    border: solid rgb(78, 5, 5) 20px;
+    border-radius: 50px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    
+}
 
+#menu-button{
+    background-color: rgb(78, 5, 5);
+    color: white;
+    padding: 12px 30px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+}
+
+#about-us{
+    width: 100vw;
+    background-color: white;
+    color: rgb(78, 5, 5);
+    font-family: "Montserrat", sans-serif;
+}
+
+#about-us h2{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 100px;
+}
+
+@media (max-width: 1024px){
     nav{
-        gap: 5px;
-        height: auto;
-    }
-
-    .cart img{
-        margin-bottom: 0;
-    }
-
-    main{
-        min-height: auto;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        padding: 50px 5% 0;
-    }
-
-    .main h1{
-        padding-top: 0;
-        font-size: clamp(40px 10vw 70px);
-        text-align: center;
-    }
-
-    .image{
-        position: static;
-        margin-top: 30px;
-    }
-
-    .image img{
-        width: min(400px, 100%);
-    }
-}
-
-@media(max-width: 800px){
-    .test{
-        background-color: orange;
-        width: 400px;
-        height: 50px;
+        display: none;
     }
 }

@@ -9,8 +9,12 @@
 
     <link rel="stylesheet" href="/MY-CODES/CSS/SIWES TRAINING/restaurant.css">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_on" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_on,menu,local_shipping,shopping_bag">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -37,16 +41,33 @@
             </nav>
             <div class="cart">
                 <img src="/MY-CODES/IMAGES/cart.png" alt="Cart">
+
+                <span class="material-symbols-outlined hamburger-menu">
+                    menu
+                </span>
             </div>
         </header>
-    </div>
+    
 
     <div class="main">
         <main>
             <div class="text">
                 <h1>Welcome to <br>
-                    CRUNCHIES</h1>
+                    <span class="crunchies">CRUNCHIES</span>
+                </h1>
                 <p>...taste the difference</p>
+                <p id="question">How would you like to receive your order?</p>
+
+                <button type="button" id="delivery">
+                    <span class="material-symbols-outlined">
+                        local_shipping
+                    </span>
+                    Delivery</button> <br>    
+                <button type="button" id="pickup">
+                    <span class="material-symbols-outlined">
+                        shopping_bag
+                    </span>
+                    Pickup</button>
             </div>
 
             <div class="image">
@@ -55,8 +76,34 @@
         </main>
     </div>
 
-    <div class="test">
-        
+    <div class="menu-section">
+            <section id="menu">
+                <div id="title">
+                    <h2>Our Menu</h2>
+                </div>
+
+                <figcaption> 
+                    <img src="/MY-CODES/IMAGES/donut.jpeg" alt="A donut">
+                </figcaption>
+                <figcaption>
+                    <img src="/MY-CODES/IMAGES/hamburger.jpeg" alt="A hamburger">
+                </figcaption>
+                <figcaption>
+                    <img src="/MY-CODES/IMAGES/jollofrice.jpeg" alt="A plate of jollof rice">
+                </figcaption>
+                <figcaption>
+                    <img src="/MY-CODES/IMAGES/meatpie.jpeg" alt="meatpie">
+                </figcaption>
+
+            </section>
+
+        </div>
+       <button type="button" id="menu-button">See More</button> 
+    
+
+       <section id="about-us">
+                <h2>About Us</h2>
+            </section>
     </div>
 </body>
 
