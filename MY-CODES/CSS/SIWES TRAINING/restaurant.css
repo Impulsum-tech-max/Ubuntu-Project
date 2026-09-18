@@ -96,6 +96,29 @@ nav ul{
     display: none !important;
 }
 
+.earn-loyalty-points{
+    /* background-color: rgb(78, 5, 5); */
+    color: white;
+    width: 230px;
+    height: 45px;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 7%;
+    right: 1.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.earn-loyalty-points button{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0 20px;
+    background-color: rgb(78, 5, 5);
+    color: white;
+    cursor: pointer;
+}
+
 .main{
     width: 100%;   
     background-color: rgb(78, 5, 5);
