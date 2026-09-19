@@ -378,7 +378,7 @@ button:hover{
 }
 
 footer{
-    min-width: 100vw;
+    width: 100%;
     margin-top: 20px;
     background-color: white;
     color: rgb(78, 5, 5);
