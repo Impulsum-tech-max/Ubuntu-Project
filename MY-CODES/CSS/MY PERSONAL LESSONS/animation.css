@@ -83,7 +83,7 @@ button {
     perspective: 800px;
 }
 
-/* .planet {
+.planet {
     width: 300px;
     height: 300px;
 
@@ -112,21 +112,25 @@ button {
 
 .planet:hover{
     animation-play-state: paused;
-} */
+} 
 
 .loader {
     display: flex;
     gap: 10px;
 }
+
 .dot {
     width: 20px;
     height: 20px;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
     background: white;
     border-radius: 50%;
 }
 
 
- /* @keyframes floatAndmove{
+  @keyframes floatAndmove{
        from{
         transform: rotateY(0) rotateX(0) rotateZ(0) translateX(0);
     }
@@ -134,7 +138,7 @@ button {
     to{
         transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg) translateX(100px);
     }
-} */
+} 
 
 @keyframes bounce {
     from {
