@@ -9,6 +9,8 @@ body {
     background: #050816;
     color: white;
     font-family: Arial, sans-serif;
+
+    animation: fadeUp 5s ease;
 }
 
 header {
@@ -51,18 +53,30 @@ nav a {
 .subtitle {
     margin-bottom: 15px;
     letter-spacing: 4px;
+
+    animation: fadeUp 3.5s ease-out;
+    animation-delay: 5.2s;
+    animation-fill-mode: forwards;
 }
 
 h1 {
     font-size: clamp(4rem, 8vw, 8rem);
     line-height: 0.85;
     margin-bottom: 30px;
+
+    animation: fadeUp 3.5s ease-out;
+    animation-delay: 5.5s;
+    animation-fill-mode: forwards;
 }
 
 .description {
     max-width: 450px;
     line-height: 1.7;
     margin-bottom: 30px;
+
+    animation: fadeUp 3.5s ease-out;
+    animation-delay: 5.8s;
+    animation-fill-mode: forwards;
 }
 
 button {
@@ -70,6 +84,10 @@ button {
     border: none;
     cursor: pointer;
     font-weight: bold;
+
+    animation: fadeUp 3.5s ease-out;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
 }
 
 .planet-container {
@@ -81,6 +99,10 @@ button {
     justify-content: center;
 
     perspective: 800px;
+
+    animation: planetEnter 2s ease-out;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
 }
 
 .planet {
@@ -163,4 +185,27 @@ button {
 .dot:nth-child(3) {
     animation-delay: -0.4s;
     animation-duration: 1.0s;
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes planetEnter {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
 }
