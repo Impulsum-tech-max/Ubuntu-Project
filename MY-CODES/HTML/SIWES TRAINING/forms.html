@@ -8,13 +8,48 @@
 <body>
     <div>
         <form action="#" method="get">
-            Firstname: <input type="text" name="firstname" id="firstname"  placeholder="john"> <br><br>
-            Lastname: <input type="text" name="lastname" id="lastname" placeholder="doe"> <br><br>
-            LGA: <input type="text" name="localGovernmentArea" id="lga" placeholder="Enter your local government"> <br><br>
+            
+            Firstname: <input type="text" name="firstname" id="firstname"  placeholder="john" required> <br><br>
+            Lastname: <input type="text" name="lastname" id="lastname" placeholder="doe" required> <br><br>
+            LGA: <input type="text" name="localGovernmentArea" id="lga" placeholder="Enter your local government" required> <br><br>
+            
+            
             <p>Gender</p>
             Male <input type="radio" name="male" id="male" value="male">
             Female <input type="radio" name="female" id="female" value="female">
-            Male <input type="radio" name="other" id="other" value="other"> <br><br>
+            Other <input type="radio" name="other" id="other" value="other"> <br><br>
+
+            <br><br>
+            <p>Programming Languages You Use</p>
+            Python: <input type="checkbox" name="pl" id="" value="Python">
+            JavaScript: <input type="checkbox" name="pl" id="" value="JavaScript">
+            C++: <input type="checkbox" name="pl" id="" value="C++">
+            Ruby: <input type="checkbox" name="pl" id="" value="Ruby">
+
+            <br><br>
+
+            <select name="State" id="">
+                <option value="">State of Origin</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+            </select>
+
+            <br><br>
+            Password: <input type="password" name="password" id="">
+            <br><br>
+            
+            Email: <input type="email" name="email" id="">
+            <br><br>
+            
+            Date: <input type="date" name="date" id="">
+            <br><br>
+            
+            <textarea name="comment" id="" placeholder="Share your comment with us" rows="3" cols="50"></textarea>
+            
+
             <button type="submit">Submit</button>
         </form>
     </div>
