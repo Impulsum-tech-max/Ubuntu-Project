@@ -15,6 +15,7 @@ h1, h2, p, button{
 
 .container{
     width: 80%;
+    min-height: 100%;
     background-color: rebeccapurple;
     margin: 0 auto;
     display: flex;
@@ -22,6 +23,9 @@ h1, h2, p, button{
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    animation: appearance 3s forwards ease-in;
+    animation-delay: 2s;
 }
 
 .graphic{
@@ -122,6 +126,7 @@ button{
     margin-left: 20px;
     text-align: left;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .book h2, .book p{
@@ -132,4 +137,73 @@ button{
     position: absolute;
     top: 50px;
     right: 0;
+}
+
+@keyframes appearance {
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50%{
+        opacity: 0.5;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    
+}
+
+.fancy{
+    display: flex;
+    gap: 50px;
+
+    
+}
+
+.dot{
+    margin: 200px auto 50px auto;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px inset rebeccapurple;
+
+    animation: bloats 1s infinite linear;
+}
+
+@keyframes bloats {
+0%{
+    transform: scale(1);
+}
+
+25%{
+    transform: scale(1.5);
+}
+
+50%{
+    transform: scale(2.0);
+}
+
+75%{
+    transform: scale(1.5);
+}
+
+100%{
+    transform: scale(1);
+}
+    
+}
+
+.dot:nth-child(2){
+    animation-delay: -0.3s;
+    animation-duration: 1.3s;
+}
+
+.dot:nth-child(3){
+    animation-delay: -0.5s;
+    animation-duration: 1.5s;
 }
