@@ -1,6 +1,8 @@
 body{
     padding: 0;
     margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1, h2, p, button{
@@ -24,8 +26,7 @@ h1, h2, p, button{
     justify-content: center;
     text-align: center;
 
-    animation: appearance 3s forwards ease-in;
-    animation-delay: 2s;
+    animation: appearance 3s ease-in;
 }
 
 .graphic{
@@ -135,8 +136,8 @@ button{
 
 .book button{
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 70px;
+    right: 2px;
 }
 
 @keyframes appearance {
@@ -147,12 +148,12 @@ button{
 
     50%{
         opacity: 0.5;
-        transform: translateY(30px);
+        transform: translateY(-30px);
     }
 
     100%{
         opacity: 1;
-        transform: translateY(50px);
+        transform: translateY(-50px);
     }
     
 }
@@ -207,3 +208,169 @@ button{
     animation-delay: -0.5s;
     animation-duration: 1.5s;
 }
+
+@media (max-width: 1300px) and (min-width: 768px){
+    
+    .container{
+        width: 55%;
+        margin: 0 auto;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+
+    .container>p{
+        margin-top: 0;
+        font-size: 15px;
+    }
+
+    .hero{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .graphic{
+        width: 50%;
+        height: 40%;
+    }
+
+    .illustration img{
+        width: 100%;
+    }
+
+    .main{
+    flex-direction: column;
+}
+
+.left{
+    width: 70%;
+}
+
+.right{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right h2, .right p {
+    text-align: center;
+}
+
+.work-img img{
+    width: 150px;
+    height: 150px;
+}
+
+.book button{
+    top: 87%;
+    font-size: 5px;
+    padding: 5px;
+}
+
+.dot{
+    margin-top: 20%;
+}
+
+}
+
+
+@media (max-width: 760px){
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    .container>p{
+        margin-top: 0;
+        font-size: 15px;
+    }
+
+    .hero{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .graphic{
+        width: 50%;
+        height: 200px;
+    }
+
+    .ui{
+        flex-direction: row;
+        width: 100%;
+    }
+
+     .ui img{
+        width: 48%;
+    } 
+
+    .illustration img{
+        width: 100%;
+    }
+
+    .main{
+    flex-direction: column;
+}
+
+.left{
+    width: 70%;
+}
+
+.right{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right h2, .right p {
+    text-align: center;
+}
+
+.right h2{
+    font-size: medium;
+}
+
+.right p{
+    font-size: small;
+}
+
+.right button{
+    font-size: 10px;
+    padding: 10px;
+}
+.work-img img{
+    width: 100px;
+    height: 100px;
+}
+
+.book{
+    width: 280px;
+    height: 200px;
+    margin-right: 20px;
+
+}
+
+.book button{
+    top: 87%;
+    font-size: 5px;
+    padding: 5px;
+}
+
+.dot{
+    margin-top: 15%;
+}
+
+}
+
+
+
