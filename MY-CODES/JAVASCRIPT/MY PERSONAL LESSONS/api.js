@@ -1,80 +1,53 @@
-const container=document.querySelector("#container");
-const search=document.querySelector("#searchInput");
-const button=document.querySelector("#refresh");
-
-let users=[];
-
-function renderUsers(userList){
-
-        container.innerHTML="";
-
-      if (userList.length === 0) {
-    container.innerHTML = "<h2>No users found</h2>";
-    return;
-}
-
-        userList.forEach(user =>{
-        const card=document.createElement("div");
-
-        const name=document.createElement("p");
-        name.textContent=`Name: ${user.name}`;
-
-        const email=document.createElement("p");
-        email.textContent=`Email: ${user.email}`;
-
-        const spacer=document.createElement("hr");
-
-        const city=document.createElement("p");
-        city.textContent=`City of Residence: ${user.address.city}`;
-
-        card.append(name, email, city, spacer);
-        container.append(card);
-})
-
-}
-
-search.addEventListener("input", (event)=>{
-    
-
-   const searchTerm=event.target.value.toLowerCase();
-
-    const filteredUsers=users.filter((user)=>{
-        const name=user.name.toLowerCase();
-        const email=user.email.toLowerCase();
-        const city=user.address.city.toLowerCase();
-
-        return name.includes(searchTerm) || email.includes(searchTerm) || city.includes(searchTerm);
-
-        
- })
- renderUsers(filteredUsers);
- 
-})
-
-    
+const form=document.querySelector("#userForm");
+const name=document.querySelector("#nameInput");
+const email=document.querySelector("#emailInput");
+const message=document.querySelector("#message");
 
 
-async function getUser(){
-    container.innerHTML="<h2>Loading...</h2>";
-    
+
+async function getUsersData(userData){
     try{
-    const info=await fetch("https://jsonplaceholder.typicode.com/users");
+        message.textContent="Loading users...";
 
-    if (!info.ok) {
-    throw new Error(`HTTP error: ${info.status}`);
+        const response=await fetch("https://jsonplaceholder.typicode.com/users", {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(userData)
+    })
+    
+    
+    if(!response.ok){
+        throw new Error(`HTTP ERROR: ${response.status}`);
+    }
+
+    message.textContent="";
+
+    const data=await response.json();
+
+    const userInfo=document.createElement("div");
+    userInfo.innerHTML=`<p>Name: ${data.name}</p> <p>Email: ${data.email}</p>`
+
+    message.append(userInfo);    
+    console.log(data);
+
+    name.value="";
+    email.value="";
+    
+    }catch(error){
+        message.textContent=`${error.message}`;
+    }
 }
 
-    users=await info.json();
-    renderUsers(users);
 
-    }
-    catch(error){
-        container.innerHTML=`<p>Error: ${error.message}</p>`;
-    }
-}
+form.addEventListener("submit", (event)=>{
+    event.preventDefault();
 
-getUser();
+    const userData={
+        name:name.value,
+        email:email.value
+    };
 
-button.addEventListener("click", ()=>{
-    getUser();
+getUsersData(userData);    
 })
