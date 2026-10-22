@@ -1,0 +1,721 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.first-section{
+    width: 100%;
+    height: 95vh;
+    background-color: aliceblue;
+    margin-left: 5px;
+
+    display: flex;
+
+    background-image: 
+    linear-gradient(
+        rgba(70, 100, 130, 0.15) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(70, 100, 130, 0.10) 1px,
+        transparent 1px
+    );
+
+    background-size: 20px 20px;
+}
+
+.left-side{
+    width: 45%;
+    text-align: justify;
+    margin-left: 50px;
+}
+
+.title p{
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+}
+
+.message h2{
+    font-size: 70px;
+    margin-bottom: 3px;
+    color: rgba(0, 0, 0, 0.743);
+}
+
+.message p{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-size: small;
+}
+
+.message span{
+    color: rgba(2, 103, 2, 0.825);
+}
+
+.message button{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.832);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.dp{
+    margin: 8px auto;
+}
+
+.dp img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: -8px;
+    margin-right: 5px;
+}
+
+.material-symbols-outlined{
+    color: #D4AF37;
+    margin-left: -5px;
+}
+
+#brag{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    margin-top: 0;
+    margin-left: 70px;
+}
+
+.right-side{
+    width: 45%;
+}
+
+.right-side img{
+    width: 100%;
+    height: 80%;
+    margin-top: 70px;
+    margin-left: -50px;
+    border-radius: 10px;
+}
+
+.second-section{
+    margin-top: 20px;
+    display: flex;
+}
+
+.left-side2{
+    width: 45%
+}
+
+.left-side2 img{
+    width: 50%;
+    height: 80%;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.right-side2{
+    width: 50%;
+}
+
+.right-side2 h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}
+
+.right-side2 p{
+    font-weight: lighter;
+}
+
+.outlines{
+    flex: 1;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+#check{
+    color: black;
+    flex-shrink: 0;
+}
+
+.third-section{
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+}
+
+.left-side3{
+    width: 45%;
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.left-side3 h2{
+    font-size: 50px;
+    margin-left: 100px;
+    margin-bottom: 5px;
+}
+
+.left-side3 p{
+    font-weight: lighter;
+    margin-left: 100px;
+}
+
+.connect{
+    font-weight: bolder;
+}
+
+.right-side3{
+    width: 50%;
+}
+
+.right-side3 img{
+    width: 70%;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.logos{
+    position: absolute;
+    left: 40%;
+    top: 70%;
+}
+
+.inner{
+    position: relative;
+}
+
+.inner img{
+    width: 50px;
+    position: absolute;
+}
+
+#github{
+    top: -30px;
+    left: 20px;
+}
+
+#ts{
+    top: 30px;
+    left: 10px;
+}
+
+#atom{
+    left: 60px;
+}
+
+.fourth-section{
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;    
+
+    background-image: 
+    linear-gradient(
+        rgba(70, 100, 130, 0.15) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(70, 100, 130, 0.10) 1px,
+        transparent 1px
+    );
+
+    background-size: 20px 20px;
+}
+
+.fourth-section h2{
+    text-align: center;
+    padding-top: 10%;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.looks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.fourth-section .looks{
+    font-size: 50px ;
+    color: black;
+    margin: 0
+}
+
+.arrow{
+    font-size: 80px;
+    color: rgba(0, 128, 0, 0.654);
+    font-weight: lighter;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.step p{
+    text-align: left;
+    margin: 5px 0 0;
+}
+
+.membership{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.membership-btn{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+hr{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.312);
+}
+.membership h2{
+    font-size: 40px;
+}
+
+.subBtn{
+   margin-left: 35px;
+}
+
+.subBtn button:hover{
+    transform: scale(1.05);
+    background-color: rgba(172, 214, 251, 0.726);
+}
+
+.subBtn button{
+    background-color: aliceblue;
+    color: black;
+    border-radius: 5px;
+    width: 250px;
+    height: 350px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    transition: 1.2s;
+}
+
+.subBtn .heading, .price{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.month{
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+.subBtn .price{
+    font-size: 22px;
+}
+
+.membership-P {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: lighter;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.membership-item {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.membershipOutlines {
+    flex: 1;
+}
+
+.memberCheck {
+    color: black;
+    flex-shrink: 0;
+    font-weight: lighter;
+}
+
+.subscribe{
+    border: black 2px solid;
+    padding: 5px 10px;
+    margin-top: 30px;
+    align-self: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.recommendation{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.p1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.p2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+footer{
+    text-align: center;
+    border-radius: 10px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.805);
+    padding-top: 50px;
+
+    background-image: 
+    linear-gradient(
+        rgba(70, 100, 130, 0.15) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(70, 100, 130, 0.10) 1px,
+        transparent 1px
+    );
+
+    background-size: 20px 20px;
+}
+
+footer h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 35px;
+}
+
+footer button{
+    background-color: rgba(0, 0, 0, 0.805);
+    color: white;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.ending{
+    margin-top: 20px;
+}
+
+.ending img{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.ending span{
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+#end{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 7px;
+    margin-left: 100px;
+}
+
+.ending hr{
+    width: 75%;
+    color: rgba(255, 255, 255, 0.062);
+}
+
+#copyright{
+    text-align: left;
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+.reflection{
+background: linear-gradient(
+  110deg,
+  #4A3000 0%,
+  #805817 15%,
+  #C99A2E 28%,
+  #FFE8A0 38%,
+  #A87512 46%,
+  #6B4608 54%,
+  #F5D675 64%,
+  #B8860B 75%,
+  #4A3000 88%,
+  #805817 100%
+);
+
+background-size: 250% 100%;
+background-position: 100% 50%;
+
+color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+
+animation: reflect 4s linear infinite;
+}
+
+
+@keyframes reflect {
+      from {
+        background-position: 100% 50%;
+      }
+
+      to {
+        background-position: -150% 50%;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width:1300px){
+    
+        .first-section{
+            height: 40vh;
+            width: 100vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .left-side{
+            width: 50%;
+            text-align: center;
+        }
+
+        .right-side{
+            width: 50%;
+            margin-left: 30px;
+        }
+
+        .right-side img{
+            width: 100%;
+            height: 80%;
+        }
+
+        .left-side2 img{
+            width: 80%;
+        }
+
+        .right-side2{
+            font-size: 25px;
+        }
+
+        .left-side3{
+            font-size: 25px;
+        }
+
+        .right-side3 img{
+            width: 80%;
+            margin-left: 50px;
+        }
+
+        #github{
+            left: 80px;
+        }
+
+        #atom{
+           top: 40px;
+           left: 75px; 
+        }
+
+        .looks-container{
+            padding: 20px;
+        }
+    }   
+
+    @media (max-width: 768px){
+
+        img {
+    max-width: 100%;
+}
+
+html,
+body {
+    max-width: 100%;
+    margin: 0;
+}
+
+        .container{
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .first-section{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .left-side{
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding: auto;
+        }
+
+        .message h2{
+            font-size: 30px;
+        }
+
+        .message p{
+            font-size: 10px;
+            font-weight: normal;
+        }
+        
+        .message button{
+            font-size: 10px;
+            padding: 5px 10px;
+        }
+
+
+        .dp{
+            margin-left: 0;
+        }
+
+        #brag{
+            margin-left: 0;
+        }
+
+        .right-side{
+            width: 100%;
+            text-align: center;
+        }
+
+        .right-side img{
+            height: 45vh;
+            width: 80vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .second-section{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-side2{
+            width: 100%;
+            text-align: center;
+        }
+
+        .left-side2 img{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .right-side2{
+            width: 100%;
+            text-align: left;
+            margin-left: 20px;
+            margin-right: auto;
+        }
+
+        .third-section{
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .left-side3{
+            width: 100%;
+            margin-left: -40px;
+        }
+
+        .right-side3{
+           width: 100%;
+           text-align: center;
+}
+    #github{
+        top: 250px;
+    }
+
+    #ts{
+        top: 200px
+    }
+
+    #atom{
+        top: 220px;
+    }
+
+    .fourth-section{
+        width: 100%;
+    }
+
+    .looks-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step{
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .fourth-section .looks{
+        font-size: 30px;
+    }
+
+    .membership-btn{
+        flex-direction: column;
+        margin-left: -20px;
+    }
+
+    footer{
+        margin-left: 1px;
+        margin-right: 1px;
+        width: 100%;
+        height: 100%;
+    }
+
+    footer button{
+        font-size: 10px;
+    }
+
+    .ending{
+        text-align: center;
+    }
+
+    .ending span{
+        margin-left: 0;
+        margin-right: -5px;
+    }
+
+    #end{
+        margin-left: 10px;
+    }
+    }
