@@ -1,0 +1,704 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Explore motorcycle racing events and select your preferred race tickets.">
+ <title>APEX GRID | Race Tickets</title>
+ 
+ <style>
+    /* General Settings */
+
+:root {
+  --background: #0b0b0e;
+  --card: #17171c;
+  --red: #ef4036;
+  --white: #ffffff;
+  --muted: #b0b0ba;
+  --border: #303038;
+  --lime: #d7ff45;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* Navigation */
+
+header {
+  background: #0b0b0ef5;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  width: 90%;
+  max-width: 1200px;
+  min-height: 75px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--lime);
+}
+
+.nav-button {
+  padding: 10px 18px;
+  background: var(--red);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 540px;
+  padding: 80px 7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+
+  background: radial-gradient(circle at 80% 40%, #5c1918 0, transparent 40%),
+    var(--background);
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: var(--lime);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero-description {
+  color: var(--muted);
+  max-width: 470px;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background: var(--red);
+  color: white;
+  font-weight: bold;
+  padding: 13px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #cf3028;
+  transform: translateY(-2px);
+}
+
+.hero-visual {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.speed-circle {
+  width: min(300px, 75vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 2px solid #ffffff35;
+  border-radius: 50%;
+  font-size: clamp(100px, 18vw, 170px);
+  background: repeating-conic-gradient(
+    #ffffff08 0deg 4deg,
+    transparent 4deg 10deg
+  );
+}
+
+.hero-visual p {
+  margin-top: 15px;
+  background: var(--lime);
+  color: #111;
+  padding: 8px 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* Sections */
+
+.section {
+  padding: 75px 7%;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 8px 0;
+  letter-spacing: -1px;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+/* Race Cards */
+
+.race-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.race-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.race-card:hover {
+  transform: translateY(-4px);
+  border-color: #656570;
+}
+
+.race-banner {
+  min-height: 145px;
+  background: linear-gradient(135deg, #501516, #17171c);
+  padding: 20px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.race-banner span {
+  font-size: 45px;
+  font-weight: 900;
+}
+
+.race-banner .flag {
+  font-size: 35px;
+}
+
+.race-details {
+  padding: 20px;
+}
+
+.race-details h3 {
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.race-info {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.race-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.race-price {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.race-price small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.select-button {
+  background: var(--red);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.select-button:hover {
+  background: #cf3028;
+}
+
+/* Benefits */
+
+.about {
+  background: #101014;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.benefit-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.benefit-card h3 {
+  margin-bottom: 12px;
+}
+
+.benefit-card p {
+  color: var(--muted);
+}
+
+/* Booking Dialog */
+
+dialog {
+  width: min(480px, 92%);
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: white;
+}
+
+dialog::backdrop {
+  background: #000b;
+  backdrop-filter: blur(4px);
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+}
+
+.close-button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#bookingForm {
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.selected-race {
+  color: var(--lime);
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#bookingForm label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#bookingForm input,
+#bookingForm select {
+  width: 100%;
+  padding: 12px;
+  color: white;
+  background: #0b0b0e;
+  border: 1px solid #41414b;
+  border-radius: 5px;
+}
+
+#bookingForm input:focus,
+#bookingForm select:focus {
+  border-color: var(--lime);
+}
+
+.total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.total-row strong {
+  font-size: 22px;
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.form-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Confirmation */
+
+.confirmation-content {
+  padding: 28px;
+  text-align: center;
+}
+
+.confirmation-content h2 {
+  margin: 12px 0;
+}
+
+.confirmation-content p {
+  overflow-wrap: anywhere;
+  margin-bottom: 12px;
+}
+
+.confirmation-content .button {
+  margin-top: 12px;
+}
+
+.success-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background: var(--lime);
+  color: #111;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+  padding: 35px 7%;
+  border-top: 1px solid var(--border);
+  background: #08080a;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content p {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.disclaimer {
+  max-width: 750px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .race-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding: 60px 5%;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    width: 92%;
+    min-height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: #111114;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 55px 6%;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+    letter-spacing: -3px;
+  }
+
+  .hero-visual {
+    min-height: 240px;
+  }
+
+  .race-grid,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 50px 6%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+ </style>
+ </head> 
+ <body> 
+     
+   <!-- Navigation --> <header>
+   <nav class="navbar">
+ <a href="#" class="logo">APEX
+ <span>GRID</span>
+ </a>
+ <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"> ☰ </button> 
+<div class="nav-links" id="navLinks">
+  <a href="#home">Home</a>
+ <a href="#races">Race Calendar</a> 
+ <a href="#about">About</a> 
+ </div> 
+ <a href="#races" class="nav-button">Get Tickets</a>
+  </nav>
+ </header> 
+<main> 
+    <!-- Hero Section --> 
+    <section class="hero" id="home"> 
+ <div class="hero-content"> 
+  <p class="eyebrow">EXPERIENCE THE SPEED</p> 
+  <h1> FEEL THE<br>
+   <span>THUNDER.</span> 
+  </h1> 
+  <p class="hero-description"> Experience the excitement of motorcycle racing. Explore race events and choose your preferred tickets. </p>
+   <a href="#races" class="button"> Explore Tickets → </a>
+       </div>
+     <div class="hero-visual" aria-hidden="true"> 
+      <div class="speed-circle">🏍️
+      </div> 
+     <p>FULL THROTTLE</p> 
+     </div> 
+     </section>
+              <!-- Race Calendar --> 
+        <section class="races section" id="races">
+             <div class="section-heading">
+      <p class="eyebrow">CHOOSE YOUR EVENT</p> 
+      <h2>Find Your Race</h2> 
+<p> Browse sample racing events and select a ticket category. </p> 
+  </div> 
+  <div class="race-grid" id="raceGrid">
+       <!-- JavaScript inserts race cards here --> 
+  </div> 
+  </section> 
+  <!-- Benefits --> 
+  <section class="about section" id="about">
+       <div class="section-heading"> 
+    <p class="eyebrow">THE RACE EXPERIENCE</p> 
+     <h2>More Than A Race</h2>
+      </div> 
+   <div class="benefit-grid"> 
+  <article class="benefit-card"> 
+   <h3>🏁 Choose Your View</h3>
+  <p> Compare ticket categories and select the experience that suits you. </p> 
+  </article> 
+  <article class="benefit-card"> 
+      <h3>🎟️ Simple Booking</h3> 
+      <p> Choose an event, select your ticket quantity, and review your booking details. </p> 
+      </article>
+       <article class="benefit-card"> 
+    <h3>📱 Responsive Website</h3> 
+   <p> Browse the website on your phone, tablet, or computer. </p> </article> 
+   </div> 
+   </section> 
+   </main>
+    <!-- Booking Modal --> 
+    <dialog id="bookingModal" aria-labelledby="bookingTitle"> <div class="modal-header">
+  <h2 id="bookingTitle">Book Your Tickets</h2>
+   <button type="button" id="closeModal" class="close-button" aria-label="Close booking form"> × 
+   </button> 
+   </div> 
+   <form id="bookingForm"> 
+       <p id="selectedRace" class="selected-race">  </p> 
+       <label for="ticketType">Ticket Category</label> 
+       <select id="ticketType" required> 
+           <option value="general">General Admission</option> <option value="grandstand">Grandstand</option> 
+           <option value="vip">VIP Experience</option> 
+           </select>
+            <label for="quantity">Number of Tickets</label>
+             <input type="number" id="quantity" min="1" max="10" value="1" required > 
+  <label for="customerName">Full Name</label>
+  <input type="text" id="customerName" maxlength="100" autocomplete="name" placeholder="Enter your full name" required > <label for="customerEmail">Email Address</label>
+ <input type="email" id="customerEmail" maxlength="254" autocomplete="email" placeholder="Enter your email" required >
+  <div class="total-row"> 
+      <span>Estimated Total</span> 
+      <strong id="totalPrice">€85</strong>
+       </div> 
+ <button type="submit" class="button submit-button"> Review Booking </button> 
+  <p class="form-note"> Demonstration only. No payment will be taken and no valid ticket will be issued. </p> 
+  </form> 
+  </dialog> 
+  <!-- Booking Confirmation --> 
+  <dialog id="confirmationModal" aria-labelledby="confirmationTitle">
+       <div class="confirmation-content"> 
+  <div class="success-icon" aria-hidden="true">✓</div> 
+  <h2 id="confirmationTitle">Booking Preview</h2> 
+  <p id="confirmationMessage"></p> 
+  <p class="form-note"> This is not a confirmed purchase. Your information has not been sent to a server or saved to a database. </p> 
+  <button id="finishBooking" class="button"> Close </button> 
+  </div>
+   </dialog>
+    <!-- Footer --> 
+    <footer>
+         <div class="footer-content"> 
+  <a href="#" class="logo">APEX
+  <span>GRID</span>
+  </a> 
+  <p> An independent motorcycle racing ticket-store demonstration. </p> 
+  <p class="disclaimer"> Not affiliated with or endorsed by MotoGP. Sample events and prices are illustrative. No real tickets are sold through this demonstration. </p>
+   <p>© 
+   <span id="year">
+       
+   </span> APEX GRID</p> 
+   </div> 
+   </footer> 
+   <script src="script.js">
+   </script>
+    </body> 
+    </html>
