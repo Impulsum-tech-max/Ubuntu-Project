@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project C</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="first-section">
+            <div class="intro">
+                <h1>Body Mass <br> Index Calculator</h1>
+                <p>
+                    Better understand your weight in relation to your height using <br>
+                    our body mass index (BMI) calculator. While BMI is not the <br>
+                    sole determinant of a healthy weight. It offers a valuable <br>
+                    starting point to evaluate your overall health and well-being.
+                </p>
+            </div>
+            <div class="calc">
+                <div class="bmi">
+                    <h4>Enter your details below</h4>
+                    <div class="radio">
+                        <label for="metric">
+                            <input type="radio" name="unit" id="metric" checked class="unit"> Metric
+                        </label>
+                        <label for="imperial">
+                            <input type="radio" name="unit" id="imperial" class="unit"> Imperial
+                        </label>
+                    </div>
+
+                    <div class="values">
+                        <div class="height">
+                            <p>Height</p>
+                            <div class="input-box">
+                                <input type="number" name="height" id="height" class="number" placeholder="0">
+                                <span id="height-unit">cm</span>
+                            </div>
+                        </div>
+                        <div class="weight">
+                            <p>Weight</p>
+                            <div class="input-box">
+                                <input type="number" name="weight" id="weight" class="number" placeholder="0">
+                                <span id="weight-unit">kg</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="note">
+                        <h2>Welcome!</h2>
+                        <p>Enter your height and weight and you'll see you BMI result here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="second-section">
+            <div class="image">
+                <div class="image-content">
+                    <img src="bmi-removebg-preview.png" alt="A man eating a healthy meal">
+                </div>
+                
+            </div>
+
+            <div class="meaning">
+                <h2>What your BMI result <br> means</h2>
+                <p>
+                    A BMI range of 18.5 to 24.9 is considered a healthy weight. <br>
+                    Maintaining a healthy weight may lower your chances of <br>
+                    experiencing health issues later on, such as obesity and type <br>
+                    2 diabetes. Aim for a nutritious diet with reduced fat and <br>
+                    sugar content, incorporating ample fruits and vegetables. <br>
+                    Additionally, strive for regular physical activity, ideally about <br> 
+                    thirty minutes daily for five days a week.
+                </p>
+            </div>
+        </div>
+
+        <div class="third-section">
+            <div class="activities">
+            <div class="icon">
+                <span class="material-symbols-outlined">
+shaved_ice
+</span>
+            </div>    
+                <h4>Healthy Eating</h4>
+                <p>
+                    Healthy eating promotes weight control, <br>
+                    disease prevention, better digestion, immunity <br>
+                    mental clarity and mood.
+                </p>
+            </div>
+
+            <div class="activities">
+            <div class="icon">
+                <span class="material-symbols-outlined">
+exercise
+</span>
+            </div>                 
+                <h4>Regular Exercise</h4>
+                <p>
+                    Exercise improves fitness, aids weight control, <br>
+                    elevates mood, and reduces disease risks, <br>
+                    fostering wellness and longevity.
+                </p>
+            </div>
+
+            <div class="activities">
+            <div class="icon">
+                <span class="material-symbols-outlined">
+moon_stars
+</span>
+            </div>                
+                <h4>Adequate Sleep</h4>
+                <p>
+                    Sleep enhances mental clarity, emotional <br>
+                    stability, and physical wellness, promoting <br>
+                    overall restoration and rejuvenation.
+                </p>
+            </div>
+        </div>
+
+        <div class="last-section">
+            <div class="first-row">
+                <div class="limitations">
+                    <h2>Limitations of BMI</h2>
+                    <p>Although BMI is often a practical indicator of healthy weight, it is not <br>
+                    suited for every person. Specific groups should be carefully considered their <br>
+                    BMI outcomes, and in certain cases, the measurement may not be <br>
+                    beneficial to use. 
+                    </p>
+                </div>
+
+                <div class="gender box">
+                    <span class="material-symbols-outlined">boy</span> 
+                    <h4>Gender</h4>
+                    <p>
+                        The development and body fat <br>
+                        composition of girls and boys vary withh <br>
+                        age. Consequently, a child's age and gender <br>
+                        are considered when evaluating their BMI.
+                    </p>
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="age box">
+                    <span class="material-symbols-outlined">cake</span><h4>Age</h4>
+                    <p>
+                        In aging individuals, increased body fat <br>
+                        and muscle loss may cause BMI to cause BMI to <br> 
+                        underestimate body fat content.  
+                    </p>
+                </div>
+                <div class="muscle box">
+                    <span class="material-symbols-outlined">physical_therapy</span><h4>Muscle</h4>
+                    <p>
+                        BMI may misclassify muscular <br>
+                        individuals as overweight or obese, as <br>
+                        it doesn't differentiate muscle from fat. 
+                    </p>
+                </div>
+            </div>
+            <div class="third-row">
+                <div class="pregnancy box">
+                    <span class="material-symbols-outlined">pregnancy</span><h4>Pregnancy</h4>
+                    <p>
+                        Expectant mothers experience weight <br>
+                        gain due to their growing baby. <br>
+                        Maintaining a healthy pre-pregnancy <br>
+                        BMI is advisable to minimise health <br>
+                        risks for both mother and child.
+                    </p>
+                </div>
+                <div class="race box">
+<span class="material-symbols-outlined">sprint</span><h4>Race</h4>
+                    <p>
+                        Certain health concersn may affect <br>
+                        individuals of some Black and Asian <br>
+                        origins at lower BMIs than others. To <br>
+                        learn more, it is advised to discuss this <br>
+                        with your GP or practice nurse.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

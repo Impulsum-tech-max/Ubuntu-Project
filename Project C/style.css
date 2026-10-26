@@ -1,0 +1,606 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.first-section{
+    display: flex;
+    align-items: center;
+}
+
+.intro{
+    background-color: rgba(47, 79, 79, 0.038);
+    width: 75%;
+    height: 390px;
+    margin-top: -20px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 30px;
+}
+
+.intro h1, .intro p{
+    margin-left: 20%;
+    text-align: left;
+}
+
+.intro h1{
+    margin-top: 10%;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.intro p{
+    color: rgba(0, 0, 0, 0.644);
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.bmi{
+    width: 400px;
+    height: 30  0px;
+    margin-left: -70%;
+    background-color: rgba(245, 224, 224, 0.616);
+    border-radius: 20px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bmi h4{
+    margin-top: 50px;
+}
+
+.radio{
+    margin-top: 20px;
+    display: flex;
+    gap: 50px; 
+}
+
+.radio input{
+    transform: scale(1.2);
+}
+
+.values{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.values p{
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.values input{
+    border-radius: 3px;
+    height: 30px;
+    width: 100px;
+    outline: none;
+}
+
+.number, .number::placeholder{
+    padding-left: 5px;
+}
+
+.input-box {
+    position: relative;
+    display: inline-block;
+}
+
+.input-box input {
+    padding-right: 30px;
+}
+
+.input-box span {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: blue;
+    font-size: 15px;
+}
+
+.note{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 2px 15px;
+    height: 80px;
+    width: 90%;
+    background-color: blue;
+    border-radius: 5px 35px 35px 5px;
+    text-align: left;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.note h2{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.note p{
+    font-size: 10px;
+}
+
+.second-section{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.image{
+    width: 50%;
+}
+
+.image-content{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(47, 79, 79, 0.038);
+}
+
+.image-content img{
+    height: 300px;
+}
+
+.meaning{
+    width: 50%;
+}
+
+.meaning h2, .meaning p{
+    margin-top: 20px;
+}
+
+.meaning h2{
+    font-size: 35px;
+}
+
+.meaning p{
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.644);
+    font-size: 15px;
+}
+
+.third-section{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90%;
+    border-radius: 10px;
+    height: 300px;
+    background-color: rgba(47, 79, 79, 0.038);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
+.activities h4{
+    align-items: center;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.activities p{
+    margin-top: 15px;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.644);
+    font-size: 15px;
+}
+
+.activities span{
+    font-size: 40px;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(47, 79, 79, 0.192);
+}
+
+.last-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.last-section div{
+    margin-bottom: 20px;
+}
+
+.first-row{
+    display: flex;
+    font-size: 20px;
+}
+
+.last-section h4{
+    display: inline;
+}
+
+.box{
+    border-radius: 10px;
+    padding: 15px 10px;
+    z-index: 9999;
+    background-color: rgba(245, 224, 224, 0.616);
+    box-shadow: 10px 25px 10px gray;
+}
+
+.limitations{
+    margin-top: 30px;
+    padding-left: 200px;
+    width: 70%;
+}
+
+.last-section p{
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.901);
+    font-size: 12px;
+}
+
+.gender{
+    margin-left: -20%;
+    margin-top: 30px;
+}
+
+.second-row, .third-row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+
+/* ========== TABLETS ========== */
+@media (min-width: 768px) and (max-width: 1300px) {
+
+    .first-section {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .intro {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        margin-top: 0;
+        padding: 30px;
+    }
+
+    .intro h1,
+    .intro p {
+        margin-left: 0;
+    }
+
+    .intro h1 {
+        margin-top: 20px;
+        font-size: 35px;
+    }
+
+    .bmi {
+        width: min(100%, 500px);
+        height: auto;
+        margin-left: 0;
+        padding: 25px 0;
+    }
+
+    .bmi h4 {
+        margin-top: 15px;
+    }
+
+    .second-section {
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .image,
+    .meaning {
+        width: 50%;
+    }
+
+    .image-content {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .image-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .meaning h2 {
+        font-size: 28px;
+    }
+
+    .third-section {
+        width: 95%;
+        height: auto;
+        min-height: 300px;
+        gap: 40px;
+        padding: 30px 20px;
+        flex-wrap: wrap;
+    }
+
+    .activities {
+        flex: 1 1 200px;
+    }
+
+    .activities h4 {
+        font-size: 24px;
+    }
+
+    .activities span {
+        font-size: 32px;
+    }
+
+    .limitations {
+        width: 90%;
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .first-row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .second-row,
+    .third-row {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .box {
+        max-width: 100%;
+    }
+
+    .gender {
+        margin-left: 0;
+    }
+}
+
+
+/* ========== PHONES ========== */
+@media (max-width: 767px) {
+
+    .first-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 15px;
+    }
+
+    .intro {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        margin-top: 0;
+        padding: 25px 15px;
+        gap: 20px;
+    }
+
+    .intro h1,
+    .intro p {
+        margin-left: 0;
+    }
+
+    .intro h1 {
+        margin-top: 15px;
+        font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .intro p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .intro br {
+        display: none;
+    }
+
+    .bmi {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-left: 0;
+        padding: 20px 10px;
+    }
+
+    .bmi h4 {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .radio {
+        gap: 35px;
+    }
+
+    .values {
+        gap: 12px;
+    }
+
+    .values > div {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .values input {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .input-box input {
+        width: 100%;
+    }
+
+    .note {
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        padding: 15px;
+        gap: 5px;
+    }
+
+    .note h2 {
+        margin-top: 5px;
+        font-size: 18px;
+    }
+
+    .note p {
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .second-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 15px;
+    }
+
+    .image,
+    .meaning {
+        width: 100%;
+    }
+
+    .image-content {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .image-content img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .meaning h2 {
+        font-size: 28px;
+    }
+
+    .meaning h2,
+    .meaning p {
+        margin-top: 15px;
+    }
+
+    .meaning p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .third-section {
+        width: calc(100% - 30px);
+        height: auto;
+        margin-top: 25px;
+        padding: 25px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .activities {
+        width: 100%;
+    }
+
+    .activities h4 {
+        margin-top: 15px;
+        font-size: 24px;
+    }
+
+    .activities p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .activities span {
+        font-size: 32px;
+    }
+
+    .last-section {
+        padding: 0 15px;
+    }
+
+    .limitations {
+        width: 100%;
+        padding: 0;
+        margin-top: 25px;
+    }
+
+    .first-row,
+    .second-row,
+    .third-row {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .first-row {
+        font-size: 18px;
+    }
+
+    .box {
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .last-section p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .gender {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.note.show{
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.note.show p{
+    font-size: 20px;
+}
+
+
+
