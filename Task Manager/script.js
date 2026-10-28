@@ -1,3 +1,6 @@
+import { saveTask, loadTask } from "./js/storage.js";
+import { enableEditing } from "./js/tasks.js";
+
 const taskInput = document.querySelector("#taskInput");
 const addBtn = document.querySelector("#addBtn");
 const taskList = document.querySelector("#taskList");
@@ -5,71 +8,6 @@ const all = document.querySelector("#filterAll");
 const pending = document.querySelector("#filterPending");
 const completed = document.querySelector("#filterCompleted");
 
-function saveTask() {
-  const tasks = document.querySelectorAll(".task");
-
-  const taskData = Array.from(tasks).map((task) => {
-    return {
-      text: task.firstChild.textContent,
-      completed: task.classList.contains("completed"),
-    };
-  });
-
-  localStorage.setItem("tasks", JSON.stringify(taskData));
-}
-
-function loadTask() {
-  const retrieveData = localStorage.getItem("tasks") || "[]";
-  const parsedData = JSON.parse(retrieveData);
-
-  parsedData.forEach((parsedDatum) => {
-    const newList = document.createElement("li");
-    newList.className = "task";
-
-    newList.append(parsedDatum.text);
-
-    if (parsedDatum.completed) {
-      newList.classList.add("completed");
-    }
-
-    const delBtn = document.createElement("button");
-    delBtn.className = "delete";
-    delBtn.textContent = "Delete";
-    newList.append(delBtn);
-
-    delBtn.addEventListener("click", () => {
-      newList.remove();
-      saveTask();
-    });
-
-    newList.addEventListener("click", (event) => {
-      if (!event.target.matches(".delete")) {
-        newList.classList.toggle("completed");
-        saveTask();
-             }
-    });
-
-    if (currentFilter === "completed") {
-        if(parsedDatum.completed){
-         newList.style.display = "list-item";
-  } else {
-    newList.style.display = "none";
-  }
-    }
-    else if (currentFilter === "pending") {
-        if(!parsedDatum.completed){
-         newList.style.display = "list-item";
-  } else {
-    newList.style.display = "none";
-  }
-    }
-    else{
-        newList.style.display="list-item"
-    }
-    taskList.append(newList);
-  });
-    
-  }
 
 let currentFilter = "all";
 all.classList.add("active");
@@ -80,7 +18,12 @@ addBtn.addEventListener("click", (event) => {
 
   lists.className = "task";
   delBtn.className = "delete";
-  delBtn.textContent = "Delete";
+  delBtn.innerHTML = `<span class="material-symbols-outlined">delete</span>`;
+
+  const editBtn = document.createElement("button");
+  editBtn.className = "edit";
+  editBtn.innerHTML = `<span class="material-symbols-outlined">
+                      edit</span>`;
 
   delBtn.addEventListener("click", (event) => {
     lists.remove();
@@ -92,7 +35,12 @@ addBtn.addEventListener("click", (event) => {
     return;
   }
 
-  lists.append(taskInput.value, delBtn);
+  const taskText=document.createElement("span");
+  taskText.className="task-text";
+  taskText.textContent=taskInput.value;
+
+  lists.append(taskText, editBtn, delBtn);
+  enableEditing(lists, editBtn)
   taskList.append(lists);
 
   if (currentFilter === "completed") {
@@ -107,7 +55,9 @@ addBtn.addEventListener("click", (event) => {
   saveTask();
 
   lists.addEventListener("click", (event) => {
-    if (!event.target.matches(".delete")) {
+    if (
+  (!event.target.closest(".delete, .edit, .save, .cancel, input"))
+      )  {
       lists.classList.toggle("completed");
       saveTask();
     }
@@ -170,4 +120,4 @@ taskInput.addEventListener("keydown", (event) => {
   }
 });
 
-loadTask();
+loadTask(enableEditing, currentFilter);

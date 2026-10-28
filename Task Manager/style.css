@@ -4,10 +4,12 @@
     box-sizing: border-box;
 }
 
-.container{
-    height: 100vh;
+.container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     background-color: rgb(1, 1, 27);
     color: white;
@@ -24,31 +26,31 @@ h1{
 button, .delete{
     background-color: beige;
     color: rgb(1, 1, 27);
-    padding: 1px 5px;
+    padding: 1px 2px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.delete{
+.edit, .delete, .cancel, .save {
+    font-size: 16px;
     margin-left: 5px;
     margin-top: 15px;
     margin-bottom: 5px;
 }
 
-#taskList{
-    width: 50%;
+#taskList {
+    width:  min(700px, 90%);
     height: 25vh;
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 180px;
+    margin: 25px auto 0;
     border-radius: 25px;
     border-bottom: solid 5px rgb(1, 1, 27);
     background-color: white;
     color: rgb(1, 1, 27);
     text-align: left;
     list-style-position: inside;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -77,4 +79,166 @@ li{
     background-color: #4169e1;
     color: white;
     box-shadow: 0 0 10px #4169e1;
+}
+
+/* Tablets: 768px–1300px */
+@media (min-width: 768px) and (max-width: 1300px) {
+    #taskList {
+        width: 70%;
+    }
+
+    .button-menu {
+        gap: 25px;
+    }
+
+    footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 40px 20px;
+    min-height: 520px;
+}
+}
+
+/* Phones: 767px and below */
+@media (max-width: 767px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        padding-top: 10px;
+        font-size: 1.6rem;
+    }
+
+    .tasks {
+        margin-top: 20px;
+    }
+
+    #taskList {
+        width: 100%;
+        height: 35vh;
+        min-height: 180px;
+        border-radius: 15px;
+    }
+
+    li {
+        padding: 5px;
+        overflow-wrap: anywhere;
+    }
+
+    .button-menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    button {
+        padding: 6px 10px;
+    }
+
+    .edit, .delete, .cancel, .save {
+        font-size: 16px;
+        margin: 5px 2px;
+    }
+}
+
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 25px 15px;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        rgb(1, 1, 27),
+        rgb(4, 8, 45)
+    );
+    border-top: 1px solid rgba(65, 105, 225, 0.5);
+    box-shadow: 0 -5px 20px rgba(65, 105, 225, 0.08);
+}
+
+/* Footer heading */
+footer h2 {
+    color: #dce6ff;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(65, 105, 225, 0.5);
+}
+
+/* Footer description */
+footer p {
+    color: #8da9ff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Technology line */
+footer .tech-stack {
+    color: #a9b8e8;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Copyright */
+footer .copyright {
+    color: #69769e;
+    font-size: 0.75rem;
+    margin-top: 15px;
+}
+
+/* Phone responsiveness */
+@media (max-width: 767px) {
+    footer {
+        margin-top: 35px;
+        padding: 20px 10px;
+    }
+
+    footer h2 {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    footer .tech-stack {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Glowing blue footer accent */
+footer::before {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    background: #4169e1;
+    box-shadow:
+        0 0 5px #4169e1,
+        0 0 12px #4169e1,
+        0 0 25px rgba(65, 105, 225, 0.7);
+    animation: bluePulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes bluePulse {
+    from {
+        opacity: 0.55;
+        box-shadow: 0 0 5px #4169e1,
+                    0 0 10px rgba(65, 105, 225, 0.4);
+    }
+
+    to {
+        opacity: 1;
+        box-shadow: 0 0 8px #4169e1,
+                    0 0 18px #4169e1,
+                    0 0 30px rgba(65, 105, 225, 0.8);
+    }
 }
