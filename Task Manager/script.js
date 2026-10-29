@@ -121,3 +121,19 @@ taskInput.addEventListener("keydown", (event) => {
 });
 
 loadTask(enableEditing, currentFilter);
+
+function liveTimeDate(){
+  const now = new Date();
+  document.querySelector(".date").textContent=now.toLocaleString(`en-NG`, {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+}
+
+setInterval(liveTimeDate, 1000);
+liveTimeDate()

@@ -81,6 +81,10 @@ li{
     box-shadow: 0 0 10px #4169e1;
 }
 
+.date{
+    margin-top: 50px;
+}
+
 /* Tablets: 768px–1300px */
 @media (min-width: 768px) and (max-width: 1300px) {
     #taskList {
@@ -98,7 +102,7 @@ li{
     justify-content: center;
     margin-top: 60px;
     padding: 40px 20px;
-    min-height: 520px;
+    min-height: 400px;
 }
 }
 
@@ -241,4 +245,5 @@ footer::before {
                     0 0 18px #4169e1,
                     0 0 30px rgba(65, 105, 225, 0.8);
     }
-}
+} 
+
