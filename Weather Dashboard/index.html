@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Board</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class="container">
+        <div class="weather-dashboard daytime">
+            <section class="search-section">
+                <div class="search-engine">
+                <input type="text" name="search" id="search" placeholder="Enter city...">
+                <button type="button" class="material-symbols-outlined search-button" aria-label="Search city">search</button>
+                <div class="suggestions"></div>
+                </div>
+            </section>
+
+            <div class="recent-searches">
+                <h3>RECENT SEARCHES</h3>
+                <div class="recent-cities"></div>
+            </div>
+            
+            <section id="weather-details">
+                <div class="first-row"></div>
+                <div class="second-row"></div> 
+                <div class="third-row"></div>
+                <div class="fourth-row"></div>
+                <div class="fifth-row"></div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
