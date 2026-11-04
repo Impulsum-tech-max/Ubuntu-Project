@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense <span>Tracker</span></h1>
+            <p>
+                Keep track of your financial transactions.
+            </p>
+        </header>
+
+        <section class="summary">
+            <div>
+                <h2>Total Income</h2>
+                <p id="total-income">₦0.00</p>
+            </div>
+
+            <div>
+                <h2>Total Expenses</h2>
+                <p id="total-expenses">₦0.00</p>
+            </div>
+
+            <div>
+                <h2>Current Balance</h2>
+                <p id="current-balance">₦0.00</p>
+            </div>
+        </section>
+
+        <section class="transaction-form">
+            <h2>Add Transaction</h2>
+            <form id="transaction-form">
+                <label for="description">
+                    Description
+                    <textarea name="description" id="description" required></textarea>
+                </label>
+
+                <label for="amount">
+                    Amount
+                    <input type="number" name="amount" id="amount" min="0.01" step="0.01" placeholder="0.00" required>
+                </label>
+
+                <div class="radio">
+
+                <label for="income">
+                    Income
+                    <input type="radio" name="type" id="income" value="income" required>
+                </label>
+
+                <label for="expense">
+                    Expense
+                    <input type="radio" name="type" id="expense" value="expense" required>
+                </label>                    
+                </div>
+
+                <label for="category">
+                    Category
+                    <select name="category" id="category" required>
+                        <option value="">----</option>
+                        <option value="food">Food</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="bills">Bills</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="health">Health</option>
+                        <option value="education">Education</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="salary">Salary</option>
+                        <option value="business">Business</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+
+                <button type="submit" id="submit">Add Transaction</button>
+            </form>
+        </section>
+
+        <section class="transaction-history">
+            <h2>Transaction History</h2>
+            <div id="transaction-list"></div>
+            <p id="empty-message">Add your first transaction</p>
+        </section>
+    </div>
+
+</body>
+</html>
