@@ -72,6 +72,7 @@ header p{
     border-radius: var(--border-radius);
     flex: 1;
     color: var(--text-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .summary div h2{
@@ -98,10 +99,11 @@ header p{
 .transaction-form{
     text-align: center;
     margin-top: 40px;
-    padding: 50px;
+    padding: 32px;
     background-color: var(--panels);
     border-radius: var(--border-radius);
     border: solid 2px var(--border-colour);
+    box-shadow: rgba(0, 0, 0, 0.15);
 }
 
 .transaction-form h2{
@@ -129,16 +131,6 @@ header p{
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.transaction-form label:has(input[type="radio"]){
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    font-size: 1rem;
-
-    color: var(--text-primary);
 }
 
 .radio {
@@ -214,11 +206,35 @@ input[type="radio"]{
     background-color: var(--panels);
     border: 1px solid var(--border-colour);
     border-radius: var(--border-radius);
+    box-shadow: rgba(0, 0, 0, 0.15);
 }
 
 .transaction-history h2 {
     font-size: 1.8rem;
     margin-bottom: 25px;
+}
+
+#transaction-list {
+    list-style: none;
+}
+
+#transaction-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+#transaction-list li span {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
 }
 
 #empty-message {
@@ -250,4 +266,52 @@ input[type="radio"]{
     .radio {
     justify-content: center;
 }
+
+#transaction-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 15px;
+}
+
+#transaction-list li span {
+    width: 100%;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+#transaction-list li button {
+    width: 100%;
+    padding: 11px;
+}
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #2563EB;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background-color: #1D4ED8;
+}
+
+.delete-btn {
+    background-color: #3B1D26;
+    color: #F87171;
+}
+
+.delete-btn:hover {
+    background-color: #51212E;
 }
